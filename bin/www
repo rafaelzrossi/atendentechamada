@@ -82,8 +82,21 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-//mongoose.connect('mongodb://localhost/browser-calls');
-//mongoose.Promise = Promise;
+
+
+
+const local = 'mongodb://localhost/browser-calls'
+const MONGO_URI = 'mongodb://login:login@browser-calls-shard-00-00-kmrrc.mongodb.net:27017,browser-calls-shard-00-01-kmrrc.mongodb.net:27017,browser-calls-shard-00-02-kmrrc.mongodb.net:27017/test?ssl=true&replicaSet=browser-calls-shard-0&authSource=admin&retryWrites=true&w=majority';
+
+
+mongoose.connect(MONGO_URI).catch((error) => {
+  console.log(error);
+});
+mongoose.Promise = Promise;
+mongoose.connection.on('connected', () => {
+  console.log("CONNECTED TO MONGO!!!");
+})
+
 
 
 /**
