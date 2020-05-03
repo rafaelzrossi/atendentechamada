@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-md-4.col-md-push-8
+        .panel.panel-primary.client-controls
+          .panel-heading
+            h3.panel-title Faça uma Ligação
+          .panel-body
+            p
+              strong Status
+            #call-status.well.well-sm
+              | Conectando-se à Twilio...
+            button.btn.btn-lg.btn-success.answer-button(disabled="") Atender Chamada
+            button.btn.btn-lg.btn-danger.hangup-button(disabled="", onclick="hangUp()") Desligar Chamada

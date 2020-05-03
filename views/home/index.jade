@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-md-6.col-md-push-6
+        .panel.panel-info.client-controls
+          .panel-heading
+            h3.panel-title Converse com o Suporte.
+          .panel-body
+            p
+              strong Status
+            #call-status.well.well-sm
+              | Conectando-se à Twilio...
+            button.btn.btn-lg.btn-primary.call-support-button(onclick="callSupport()" id='call')
+              span.glyphicon.glyphicon-earphone(aria-hidden="true")
+              |  Ligue para o Suporte
+            button.btn.btn-lg.btn-danger.hangup-button(disabled="", onclick="hangUp()") Desligar Chamada
