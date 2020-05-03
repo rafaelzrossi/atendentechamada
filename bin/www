@@ -82,8 +82,8 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-mongoose.connect('mongodb://localhost/browser-calls');
-mongoose.Promise = Promise;
+//mongoose.connect('mongodb://localhost/browser-calls');
+//mongoose.Promise = Promise;
 
 
 /**
